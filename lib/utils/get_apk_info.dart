@@ -85,7 +85,7 @@ class GetApkInfo {
       String iconPath = iconMatch.group(1) ?? '';
       if (iconPath.isNotEmpty) {
         myLogger.i('找到图标信息: $iconPath');
-        String path = await extractFileWith7z(apkPath, iconPath, '$tempDirPath/${apkinfo.id}');
+        String path = await extractFileWithZip(apkPath, iconPath, '$tempDirPath/${apkinfo.id}');
         if (path.isNotEmpty) {
           apkinfo.iconPath = path;
           myLogger.i('图标路径设置成功: ${apkinfo.iconPath}');

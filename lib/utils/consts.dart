@@ -14,18 +14,12 @@ Future<String> getAaptPath() async {
   return '$toolPath\\aapt.exe';
 }
 
-Future<String> getZipPath() async {
-  String toolPath = await _getToolPath();
-  return '$toolPath\\7z\\7z.exe';
-}
-
 
 const extractBadgingCommand = 'dump badging';
 const extractManifestCommand = 'dump xmltree --file AndroidManifest.xml';
 const extractResourcesCommand = 'dump resources';
 
 
-const extractApkCommand = 'x -ssc';
 
 const logFilePath = 'logs/app.log';
 
