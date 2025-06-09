@@ -1,4 +1,4 @@
-name: Build with Nuitka on Windows
+name: Build with Flutter on Windows
 
 on:
   push:
