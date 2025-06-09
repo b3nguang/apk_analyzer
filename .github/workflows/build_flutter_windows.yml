@@ -1,0 +1,36 @@
+name: Build with Nuitka on Windows
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-nuitka:
+    runs-on: windows-latest
+
+    steps:
+      - name: 检查代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Flutter 环境
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version-file: pubspec.yaml
+
+      - name: 安装依赖
+        run: |
+          flutter pub get
+
+      - name: 打包主程序
+        run: |
+          flutter build windows --release
+
+      - name: 上传构建产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk_analyzer
+          path: build/windows/runner/Release
+          retention-days: 3
