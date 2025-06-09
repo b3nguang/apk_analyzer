@@ -32,7 +32,7 @@ class GetApkInfo {
         throw Exception('Unsupported type: $type');
     }
     try {
-      var command = '${await getAapt2Path()} $cmd "$apkPath" $arg';
+      var command = '$aapt2Path $cmd "$apkPath" $arg';
       myLogger.i('执行命令: $command');
       var result = await shell.run(command);
       return result.outText;
@@ -65,7 +65,7 @@ class GetApkInfo {
     var shell = Shell(stdoutEncoding: utf8, verbose: false);
     String apkPath = apkinfo.apkPath ?? '';
     try {
-      var command = '${await getAaptPath()} $extractBadgingCommand "$apkPath"';
+      var command = '$aaptPath $extractBadgingCommand "$apkPath"';
       myLogger.i('执行命令: $command');
       var result = await shell.run(command);
       return result.outText;

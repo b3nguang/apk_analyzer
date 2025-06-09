@@ -41,6 +41,8 @@ dependencies:
   chinese_font_library: ^1.2.0
   window_manager: ^0.5.0
   archive: ^4.0.7
+  process: ^5.0.4
+  charset: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +73,8 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - win_tools/
+    - win_tools/easyFrida/
+    - win_tools/easyFrida/scripts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

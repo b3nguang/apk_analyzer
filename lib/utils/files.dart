@@ -48,13 +48,13 @@ Future<void> initDirectory(String directoryPath) async {
   }
 }
 
-Future<bool> checkFileExists(String filePath) async {
+bool checkFileExists(String filePath) {
   /*
   检查文件是否存在
   */
   try {
     final file = File(filePath);
-    return await file.exists();
+    return file.existsSync();
   } catch (e) {
     return false;
   }

@@ -1,27 +1,50 @@
 import 'package:apk_analyzer/utils/files.dart';
 
-Future<String> _getToolPath() async {
-  return await checkFileExists('pubspec.yaml') ? 'win_tools' : 'data/flutter_assets/win_tools';
+String _getToolPath() {
+  return checkFileExists('pubspec.yaml') ? 'win_tools' : 'data/flutter_assets/win_tools';
 }
 
-Future<String> getAapt2Path() async {
-  String toolPath = await _getToolPath();
+String _getAapt2Path() {
+  String toolPath = _getToolPath();
   return '$toolPath\\aapt2.exe';
 }
 
-Future<String> getAaptPath() async {
-  String toolPath = await _getToolPath();
+String _getAaptPath() {
+  String toolPath = _getToolPath();
   return '$toolPath\\aapt.exe';
 }
 
+String _getEasyFridaPath() {
+  String toolPath = _getToolPath();
+  return '$toolPath\\easyFrida';
+}
+
+String _getEasyFridaExePath() {
+  String fridaPath = _getEasyFridaPath();
+  return '$fridaPath\\easyFrida.exe';
+}
+
+String _getEasyFridaPluginPath() {
+  String fridaPath = _getEasyFridaPath();
+  return '$fridaPath\\scripts\\plugins.list';
+}
 
 const extractBadgingCommand = 'dump badging';
 const extractManifestCommand = 'dump xmltree --file AndroidManifest.xml';
 const extractResourcesCommand = 'dump resources';
 
-
-
-const logFilePath = 'logs/app.log';
+final aaptPath = _getAaptPath();
+final aapt2Path = _getAapt2Path();
+final easyFridaExePath = _getEasyFridaExePath();
+final easyFridaPluginPath = _getEasyFridaPluginPath();
+const easyFridaClassCommand = '--className';
+const easyFridaIsMethodCommand = '-m';
+const easyFridaSpawnCommand = '-f';
+const easyFridaAttachCommand = '-p';
+const easyFridaPluginCommand = '-l';
+const easyFridaLogCommand = '-o';
+const logDirPath = './logs';
+const logFilePath = '$logDirPath/app.log';
 
 const tempDirPath = './temp';
 

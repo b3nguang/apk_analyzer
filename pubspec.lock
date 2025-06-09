@@ -41,6 +41,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.0"
+  charset:
+    dependency: "direct main"
+    description:
+      name: charset
+      sha256: "27802032a581e01ac565904ece8c8962564b1070690794f0072f6865958ce8b9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.1"
   chinese_font_library:
     dependency: "direct main"
     description:
@@ -129,6 +137,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  file:
+    dependency: transitive
+    description:
+      name: file
+      sha256: a3b4f84adafef897088c160faf7dfffb7696046cb13ae90b508c2cbc95d3b8d4
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -328,6 +344,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.2"
+  process:
+    dependency: "direct main"
+    description:
+      name: process
+      sha256: "44b4226c0afd4bc3b7c7e67d44c4801abd97103cf0c84609e2654b664ca2798c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "5.0.4"
   process_run:
     dependency: "direct main"
     description:

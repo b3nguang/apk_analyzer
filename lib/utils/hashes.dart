@@ -6,7 +6,7 @@ import 'package:crypto/crypto.dart';
 
 
 Future<String> getFileSHA256(String filePath) async {
-  if (!await checkFileExists(filePath)) {
+  if (!checkFileExists(filePath)) {
     myLogger.e('文件不存在: $filePath');
     return "";
   }

@@ -1,5 +1,6 @@
 import 'package:apk_analyzer/pages/apk_info_page.dart';
 import 'package:apk_analyzer/pages/apk_table_page.dart';
+import 'package:apk_analyzer/pages/frida_page.dart';
 import 'package:apk_analyzer/utils/get_apk_info.dart';
 import 'package:apk_analyzer/utils/my_logger.dart';
 import 'package:chinese_font_library/chinese_font_library.dart';
@@ -87,6 +88,9 @@ class _MyHomePageState extends State<MyHomePage> {
       case 1:
         page = ApkTablePage();
         break;
+      case 2:
+        page = FridaPage();
+        break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
@@ -121,6 +125,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     NavigationRailDestination(
                       icon: Icon(Icons.list),
                       label: Text('详细信息'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.code),
+                      label: Text("Frida功能")
                     ),
                   ],
                   selectedIndex: selectedIndex,
